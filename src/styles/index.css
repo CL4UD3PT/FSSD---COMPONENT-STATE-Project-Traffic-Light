@@ -92,3 +92,15 @@ ul li {
   );
   box-shadow: 0px 0px 33px 11px #c322fddc;
 }
+
+.z-index-0 {
+  z-index: 0;
+}
+
+.z-index-1 {
+  z-index: 1;
+}
+
+.z-index-2 {
+  z-index: 2;
+}

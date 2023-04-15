@@ -20,31 +20,14 @@ const Home = () => {
     }
   }, [isCycle, extraLights]);
 
-  // useEffect(() => {
-  //   if (isCycle) {
-  //     const interval = setInterval(() => {
-  //       setColor((color) =>
-  //         color == "red"
-  //           ? "yellow"
-  //           : color == "yellow"
-  //           ? "green"
-  //           : color == "green"
-  //           ? "purple"
-  //           : "red"
-  //       );
-  //     }, 1000);
-  //     return () => clearInterval(interval);
-  //   }
-  // }, [isCycle]);
-
   return (
     <div className="text-center">
       <div className="traffic-pole"></div>
       <ul className="traffic-light">
-        <li onClick={() => setColor("red")} className={`light ${color == "red" ? color : ""}`}></li>
-        <li onClick={() => setColor("yellow")} className={`light ${color == "yellow" ? color : ""}`}></li>
-        <li onClick={() => setColor("green")} className={`light ${color == "green" ? color : ""}`}></li>
-        <li onClick={() => setColor("purple")} className={`light ${color == "purple" ? color : ""}`} style={{visibility: isPurple?"visible":"hidden"}}></li>
+        <li onClick={() => setColor("red")} className={`light ${color == "red" ? color + " z-index-1" : "z-index-0"}`}></li>
+        <li onClick={() => setColor("yellow")} className={`light ${color == "yellow" ? color + " z-index-1" : "z-index-0"} z-index-1`}></li>
+        <li onClick={() => setColor("green")} className={`light ${color == "green" ? color + " z-index-1" : "z-index-0"}`}></li>
+        <li onClick={() => setColor("purple")} className={`light ${color == "purple" ? color + " z-index-1" : "z-index-0"}`} style={{visibility: isPurple?"visible":"hidden"}}></li>
       </ul>
       <div className="m-2">
         <button className={`btn ${isCycle?'btn-success':'btn-secondary'} mx-1 my-3`} onClick={() => { setIsCycle(!isCycle) }}
