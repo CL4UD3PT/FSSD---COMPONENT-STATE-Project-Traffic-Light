@@ -1,42 +1,37 @@
-# Hello World with React boilerplate
+<!--hide-->
+# 🚦 Traffic Light with React
+<!--endhide-->
 
-Start coding a react application
+<p align="center">
+  <img height="500px" src="./src/img/traffic-light-anim.gif?raw=true" />
+</p>
 
-> If you are working locally instead of using codespaces or gitpod, please follow [local installation steps](#local-installation-skip-if-you-are-working-on-codespaces-or-gitpod) and come back to this part of the readme.
+Sometimes we want to create components with an internal state that changes over time, imagine a traffic light that changes color every 3 seconds, for that we normally will make a variable color and set it to a default color:
 
-## How to start coding?
-
-- Install the packages with `$ npm install`.
-- Run the webpack server with `$ npm run start`
-
-You can update the `styles/index.css` or `js/index.js` depending on your needs.
-Add more files into your, `./src/js/components` or styles folder as you need them.
-
-## Local Installation (skip if you are working on codespaces or gitpod)
-
-Download the boilerplate using git
-
-```
-$ git clone https://github.com/4GeeksAcademy/react-hello.git
-$ cd react-hello
+```js
+let color = "blue";
 ```
 
-## Publish your website!
+But we want our component to re-render and change the website HTML every time the variable color changes, that's why we use hooks:
 
-This boilerplate is 100% compatible with the free [github pages](https://pages.github.com/) and [vercel](https://vercel.com/) hosting.
+```js
+//        ↓ variable name             ↓ default value
+const [ color, setColor] = useState("red");
+//               ⬆ function to change the color
+```
 
-It takes just 2 minutes to deploy, [click here to start the process](https://github.com/4GeeksAcademy/react-hello/blob/master/docs/DEPLOY.md).
+From now on, every time we use the function `setColor` to change the variable color, the component will re-render and the entire traffic light HTML will be updated with the new color. 
 
-## Other features
+## 📝 Features
+- When any light is clicked (selected) it glows. The other lights stop glowing.
 
-- Automatic Code Formatting: Use of [Prettier](https://prettier.io/) for automatic code indentation and formatting.
-- Error reporting: Use of [eslint](https://eslint.org/) for better error reporting.
-- Hot Deploy: Use of [Webpack Development Server](https://webpack.js.org/configuration/dev-server/) for hot deploy and live reload.
-- One-command publish of the code to github pages with `npm run deploy:github`.
-- Babel 7 (really fast).
+### 🔥 Bonus features
++ A button that when you click on it, cycles the traffic light selected color between red, green, yellow and other colors that might be added.  
++ A button that when clicked it ads an extra color "purple" to the traffic light.
 
-### Contributors
+### 🎨 Design feature
++ The lights z-index are updated so that the glowing one is at a hight level index than the others.
 
-This template was built as part of the 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and many other contributors. Find out more about our [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
 
-You can find other templates and resources like this at the [school github page](https://github.com/4geeksacademy/).
+### 👥 Contributors
+This and many other projects are built by students as part of the 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and many other contributors. Find out more about our [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
